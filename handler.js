@@ -8,6 +8,8 @@ const parser = require('lambda-multipart-parser');
 const imageBucketName = 'sc2021b3-demoapp-0249';
 const userinfoUrl = 'https://dev-yujn-qe3.us.auth0.com/userinfo';
 
+const tagname = "test-tag";
+
 // Auth0のuserinfoエンドポイントからユーザ情報を取得
 const getUserinfo = async (event) => {
   try {
@@ -97,6 +99,7 @@ module.exports.post = async (event) => {
     TableName: 'posts',
     Item: {
       username: userinfo.name,
+      tagneme, 
       created_at: timestamp,
       body,
       imageUrl,
