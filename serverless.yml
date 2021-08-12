@@ -59,6 +59,11 @@ resources:
             AttributeType: S
           - AttributeName: created_at
             AttributeType: N
+        GlobalSecondaryINdexes: 
+          - INdexName: tagINdex
+            KeySchema: 
+              - AttributeName: tagname
+                KeyType: HASH
         KeySchema:
           - AttributeName: username
             KeyType: HASH
